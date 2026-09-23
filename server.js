@@ -1,30 +1,29 @@
-import cors from "cors"
-import morgan from "morgan"
-import express from "express"
-import dotenv from "dotenv"
+import cors from "cors";
+import morgan from "morgan";
+import express from "express";
+import dotenv from "dotenv";
+import testRoute from "./routes/route.js";
 
-const app = express()
+const app = express();
 
 // confing dotenv
 dotenv.config();
 
 // Middleware
-app.use(cors())
-app.use(express.json())
-app.use(morgan('dev'))
-
+app.use(cors());
+app.use(express.json());
+app.use(morgan("dev"));
 
 // route
 
-app.use("/api/v1/test", require("./routes/route"));
-
+app.use("/api/v1/test", testRoute);
 
 app.get("/", (req, resp) => {
-    return resp.status(200).send("Hello World! Happy to learn.")
-})
+  return resp.status(200).send("Hello World! Happy to learn.");
+});
 
-const PORT = process.env.PORT || 3900
+const PORT = process.env.PORT || 3900;
 
-app.listen(PORT, () =>{
-    console.log(`Node Server is running on ${PORT}`);
-})
+app.listen(PORT, () => {
+  console.log(`Node Server is running on ${PORT}`);
+});

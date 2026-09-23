@@ -1,11 +1,9 @@
-import express from "express"
-import { testUserController } from "../controllers/testController"
-const router = express.Router()
+import express from "express";
+import { testUserController } from "../controllers/testController.js";
+const router = express.Router();
 
+// routes GET | POST | DELETE
+router.get("/test-user", testUserController);
 
-// routes GET | POST | DELETE 
-router.get('/test-user', testUserController)
-
-
-// export 
-module.exports = router
+// export
+export default router;

@@ -9,4 +9,4 @@ const testUserController = (req, resp) => {
   }
 };
 
-module.exports = { testUserController };
+export { testUserController };
