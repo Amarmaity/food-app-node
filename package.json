@@ -1,0 +1,21 @@
+{
+  "name": "food-app",
+  "version": "1.0.0",
+  "description": "food app with Express Js",
+  "license": "ISC",
+  "author": "amar",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js"
+  },
+  "dependencies": {
+    "color": "^5.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "morgan": "^1.12.1",
+    "nodemon": "^3.1.14"
+  }
+}
