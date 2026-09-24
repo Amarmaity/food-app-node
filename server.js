@@ -6,7 +6,9 @@ import dotenv from "dotenv";
 
 import testRoute from "./routes/route.js";
 import connectDb from "./config/db.js";
-import authController from "./controllers/authController.js";
+import authRouter from "./routes/authRoute.js";
+import userRouter from "./routes/userRoute.js";
+
 
 const app = express();
 
@@ -26,8 +28,8 @@ app.use(morgan("dev"));
 
 // route
 app.use("/api/v1/test", testRoute);
-app.use("/api/v1/register", authController.registerController);
-app.use("/api/v1/login", authController.loginController);
+app.use("/api/v1", authRouter);
+app.use("/api/v1", userRouter)
 
 
 

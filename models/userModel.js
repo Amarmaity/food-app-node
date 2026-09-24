@@ -26,11 +26,11 @@ const userSchema = new mongoose.Schema({
     user_type: {
         type: String,
         required: [true, "user type is required."],
-        default: "cliet",
         enum: ["cliet", "admin", "vendor", "driver"]
     }
 
-})
+}, { timestamps: true }
+);
 
 
 export default mongoose.model("User", userSchema)
