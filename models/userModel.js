@@ -27,6 +27,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "user type is required."],
         enum: ["cliet", "admin", "vendor", "driver"]
+    },
+    answer: {
+        type: String,
+        required: [true, "Answer is required."]
     }
 
 }, { timestamps: true }

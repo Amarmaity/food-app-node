@@ -21,17 +21,14 @@ const middleware = (req, resp, next) => {
             user_type: decode.user_type
         };
 
-        // console.log("Decoded Token:", decode);
-        // console.log("Request User:", req.user);
-
         next();
 
     } catch (error) {
-        // console.log(error);
 
         return resp.status(401).send({
             success: false,
-            message: "Invalid or expired token."
+            message: "Invalid or expired token.",
+            error
         });
     }
 };

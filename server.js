@@ -29,13 +29,15 @@ app.use(morgan("dev"));
 // route
 app.use("/api/v1/test", testRoute);
 app.use("/api/v1", authRouter);
-app.use("/api/v1", userRouter)
+app.use("/api/v1", userRouter);
 
 
 
 app.get("/", (req, resp) => {
   return resp.status(200).send("Hello World! Happy to learn.");
 });
+
+
 
 const PORT = process.env.PORT || 3900;
 

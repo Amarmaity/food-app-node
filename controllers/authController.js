@@ -6,10 +6,10 @@ import jwt from "jsonwebtoken";
 const registerController = async (req, resp) => {
 
     try {
-        const { userName, email, password, phone, address, cnf_password, user_type} = req.body
+        const { userName, email, password, phone, address, cnf_password, user_type, answer} = req.body
 
         // validation
-        if (!userName || !email || !password || !cnf_password || !phone || !address || !user_type) {
+        if (!userName || !email || !password || !cnf_password || !phone || !address || !user_type || !answer) {
             return resp.status(200).send({
                 success: false,
                 mesage: "Please provide all field."
@@ -34,10 +34,11 @@ const registerController = async (req, resp) => {
 
         // create user
         const hashPasswprd = await bcrypt.hash(password, 10);
-        const user = await userModel.create({ userName, email, password: hashPasswprd, phone, address, cnf_password, user_type })
+        const user = await userModel.create({ userName, email, password: hashPasswprd, phone, address, cnf_password, user_type, answer })
         resp.status(201).send({
             success: true,
             message: "Successfully Registered.",
+            user
         })
 
     } catch (error) {
