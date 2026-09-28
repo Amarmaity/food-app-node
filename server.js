@@ -9,6 +9,7 @@ import connectDb from "./config/db.js";
 import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
 import restaurentRoute from "./routes/restaurentRoute.js";
+import categoryRoute from "./routes/categoryRoute.js";
 
 
 const app = express();
@@ -31,6 +32,7 @@ app.use(morgan("dev"));
 app.use("/api/v1", authRouter);
 app.use("/api/v1", userRouter);
 app.use("/api/v1", restaurentRoute);
+app.use("/api/v1", categoryRoute);
 
 
 
