@@ -11,7 +11,8 @@ const categotySchema = new mongoose.Schema(
             type: String,
             default: "https://www.vecteezy.com/vector-art/52792818-restaurant-logo-design"
         },
-    }
+    },
+    { timestamps: true }
 );
 
 
