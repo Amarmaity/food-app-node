@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 // Schema
-const userSchema = new mongoose.Schema({
+const vendorSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: [true, 'Username is required.']
@@ -23,11 +23,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Phone number is required."]
     },
-    user_type: {
+    // user_type: {
+    //     type: String,
+    //     required: [true, "user type is required."],
+    //     enum: ["cliet", "admin", "vendor", "driver"]
+    // },
+
+    business_type: {
         type: String,
-        required: [true, "user type is required."],
-        enum: ["cliet", "admin", "vendor", "driver"]
+        required: [true, "Business type is riquired."],
+        enum: ["Restaurent", "Grossary Product", "Liquid Product", "Sweet Product", "Protin Meal"]
     },
+
     answer: {
         type: String,
         required: [true, "Answer is required."]
@@ -37,4 +44,4 @@ const userSchema = new mongoose.Schema({
 );
 
 
-export default mongoose.model("User", userSchema)
+export default mongoose.model("Vendor", vendorSchema)

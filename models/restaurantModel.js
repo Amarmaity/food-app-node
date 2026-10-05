@@ -34,6 +34,16 @@ const restaurantSchema = new mongoose.Schema(
       default: true,
     },
 
+    quantity: {
+      type: Number,
+      default: 0
+    },
+
+    is_avaliable: {
+      type: Boolean,
+      default: true
+    },
+
     isOpen: {
       type: Boolean,
       default: true,
